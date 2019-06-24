@@ -1,0 +1,81 @@
+the Heartbeat API in
+fetching a list table
+tag search
+compression testing
+image editor previews
+oEmbed caching
+user autocomplete
+dashboard widgets
+Customizer preview logged-in status
+adding a hierarchical term
+deleting a comment
+deleting a tag
+deleting a link
+deleting meta
+deleting a post
+sending a post to the trash
+adding a link category
+getting a tagcloud
+getting comments
+replying to a comment
+editing a comment
+adding a menu item
+adding meta
+adding a user
+closed post boxes
+hidden columns
+updating whether to display the welcome panel
+retrieving menu meta boxes
+internal linking
+menu locations save
+saving the meta box order
+menu quick searching
+Quick Edit saving a post from a list table
+quick edit saving for a term
+querying posts for the Find Posts modal
+saving the widgets order
+saving a widget
+saving a widget
+removing inactive widgets
+uploading attachments
+image editing
+setting the featured image
+retrieving HTML for the featured image
+setting the featured image for an attachment
+date formatting
+time formatting
+saving posts from the fullscreen editor
+removing a post lock
+dismissing a WordPress pointer
+getting an attachment
+querying attachments
+updating attachment attributes
+saving backward compatible attachment attributes
+saving the attachment order
+sending an attachment to the editor
+sending a link to the editor
+the Heartbeat API
+getting revision diffs
+auto-saving the selected color scheme for
+getting themes from themes_api()
+destroying multiple open sessions for a user
+cropping an image
+generating a password
+saving the user's WordPressorg username
+installing a theme
+updating a theme
+deleting a theme
+installing a plugin
+updating a plugin
+deleting a plugin
+searching plugins
+searching plugins to install
+editing a theme or plugin file
+exporting a user's personal data
+erasing personal data
+site health checks on server communication
+site health checks on debug mode
+site health checks on background updates
+site health checks on loopback requests
+site health check to update the result status
+site health check to get directories and database sizes
