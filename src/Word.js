@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Draggable from 'react-draggable';
 export const Word = (props) => {
+  const [backgroundColor, setBackgroundColor] = useState("white")
   const [dragState, setDragState] = useState({
     activeDrags: 0,
     deltaPosition: {
@@ -19,7 +20,13 @@ export const Word = (props) => {
   const dragHandlers = { onStart: onStart, onStop: onStop };
   return (<Draggable {...dragHandlers}>
     <div
-      onClick={ () => console.log("word onclick")}
+      style={{ backgroundColor: backgroundColor }}
+      onClick={() => {
+        if (props.currentContext) {
+          setBackgroundColor(props.currentContext.color)
+        }
+      }
+      }
       className="box"
     >{props.word.text}</div>
   </Draggable>);

@@ -10,7 +10,7 @@ const App = () => {
   const [currentContext, setCurrentContext] = useState(null)
 
   return (
-    <div>
+    <div className="page">
       <h1>Kubel</h1>
       <div>{currentContext ? `Current context: ${currentContext.name}` : <React.Fragment />}</div>
       <BoundedContextList
@@ -20,8 +20,8 @@ const App = () => {
       <div>
         <button onClick={() => { setIsImportWordsDialogVisible(!isImportWordsDialogVisible) }}>Add Words</button>
       </div>
-      {words.map((word => {
-        return (<Word word={word} />)
+      {words.map(((word, index) => {
+        return (<Word key={index} word={word} currentContext={currentContext}/>)
       }))}
       <ImportWords
         isImportWordsDialogVisible={isImportWordsDialogVisible}
