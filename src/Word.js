@@ -11,7 +11,6 @@ export const Word = (props) => {
     }
   });
   function onStart() {
-    console.log(this);
     setDragState({ activeDrags: ++dragState.activeDrags });
   }
   function onStop() {
@@ -20,8 +19,8 @@ export const Word = (props) => {
   const dragHandlers = { onStart: onStart, onStop: onStop };
   return (<Draggable {...dragHandlers}>
     <div
-      onClick={ console.log("word onclick")}
+      onClick={ () => console.log("word onclick")}
       className="box"
-    >{props.word.text} {props.word.count}</div>
+    >{props.word.text}</div>
   </Draggable>);
 };

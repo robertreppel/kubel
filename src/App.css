@@ -40,3 +40,8 @@ div.box {
   padding: 2px;
   margin: 2px;
 }
+
+span.context {
+  margin: 2px;
+  padding: 2px;
+}
