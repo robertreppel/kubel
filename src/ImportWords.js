@@ -7,14 +7,16 @@ export const ImportWords = (props) => {
         const text = document.getElementById("importedWords").value;
         let importedLines = new Map();
         text.split("\n").map((word) => {
-            if (word) {
-                if (importedLines.has(word)) {
-                    importedLines.set(word, importedLines.get(word) + 1);
-                }
-                else {
-                    importedLines.set(word, 1);
-                }
+            const myRegexp = /^(\d*):(.*)/;
+            const match = myRegexp.exec(word);
+            if(match) {
+                const lineNo = match[1]
+                const text = match[2]
+                setWord(text, importedLines, lineNo);
+            } else {
+                setWord(word, importedLines);
             }
+
             return null;
         });
         let words = [];
@@ -42,3 +44,15 @@ export const ImportWords = (props) => {
         return (<React.Fragment />);
     }
 };
+
+function setWord(text, importedLines) {
+    if (text) {
+        if (importedLines.has(text)) {
+            importedLines.set([]);
+        }
+        else {
+            importedLines.set(text, []);
+        }
+    }
+}
+

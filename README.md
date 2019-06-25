@@ -30,10 +30,10 @@ https://github.com/WordPress/WordPress/blob/4c0620bdf8b3c1bac314f6b50f15ee639971
 
 To get an idea of what areas of responsibility and/or concepts which belong together it may cover, let's do some judicious grep magic to retrieve some comments:
 
-```
-wget -O - -o /dev/null  https://raw.githubusercontent.com/WordPress/WordPress/4c0620bdf8b3c1bac314f6b50f15ee6399710ae5/wp-admin/includes/ajax-actions.php  \
-| grep -E -o "Ajax handler for(.*)" \
-| sed 's/Ajax handler for //g'
+```  
+
+wget -O - -o /dev/null  https://raw.githubusercontent.com/WordPress/WordPress/4c0620bdf8b3c1bac314f6b50f15ee6399710ae5/wp-admin/includes/ajax-actions.php  | grep -E -o -n "Ajax handler for(.*)" | sed 's/Ajax handler for //g
+'
 
 ```
 
