@@ -6,18 +6,17 @@ import { BoundedContextList } from './BoundedContextList';
 
 const App = () => {
   const [currentContext, setCurrentContext] = useState(null)
-  
+
   const wordsFromLocalStorage = JSON.parse(localStorage.getItem("words"))
   const [words, setWords] = useState(wordsFromLocalStorage || [])
-  
-  const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(wordsFromLocalStorage.length > 0 ? false : true)
-  const [isContextListVisible, setIsContextListVisible] = useState(wordsFromLocalStorage.length > 0 ? true : false)
-  
-  useEffect(() => {
-    const wordJson =  JSON.stringify(words);
-    localStorage.setItem('words', wordJson);
-  }, [words]);
 
+  const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(wordsFromLocalStorage && wordsFromLocalStorage.length > 0 ? false : true)
+  const [isContextListVisible, setIsContextListVisible] = useState(wordsFromLocalStorage && wordsFromLocalStorage.length > 0 ? true : false)
+
+  useEffect(() => {
+    const wordsJson = JSON.stringify(words);
+    localStorage.setItem('words', wordsJson);
+  }, [words]);
 
   return (
     <div className="page">
@@ -26,9 +25,9 @@ const App = () => {
         currentContext={currentContext}
         setCurrentContext={setCurrentContext}
         isContextListVisible={isContextListVisible}
-        />
-      {words.map(((word, index) => {
-        return (<Word key={index} word={word} currentContext={currentContext}/>)
+      />
+      {words.map(((word) => {
+        return (<Word key={word.id} word={word} currentContext={currentContext} />)
       }))}
       <ImportWords
         isImportWordsDialogVisible={isImportWordsDialogVisible}

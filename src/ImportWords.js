@@ -1,4 +1,6 @@
 import React from 'react';
+import uuidv4 from 'uuid/v4';
+
 export const ImportWords = (props) => {
 
     const importWords = () => {
@@ -17,7 +19,7 @@ export const ImportWords = (props) => {
         });
         let words = [];
         importedLines.forEach((v, k) => {
-            words.push({ text: k, count: v });
+            words.push({ id: uuidv4(), text: k, count: v });
         });
         props.setWords(words);
         props.setIsImportWordsDialogVisible(false);

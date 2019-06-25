@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
+
 export const Word = (props) => {
   const [backgroundColor, setBackgroundColor] = useState("white")
-  const [dragState, setDragState] = useState({
-    activeDrags: 0,
-    deltaPosition: {
-      x: 0, y: 0
-    },
-    controlledPosition: {
-      x: -400, y: 200
-    }
-  });
-  function onStart() {
-    setDragState({ activeDrags: ++dragState.activeDrags });
+
+  const dragStateFromLocalStorage = JSON.parse(localStorage.getItem(props.word.id))
+  const [dragState, setDragState] = useState(dragStateFromLocalStorage || {})
+
+  const onDrag = (e, position) => {
+    const { x, y } = position;
+    setDragState({ ...dragState, posX: x, posY: y, word: props })
   }
-  function onStop() {
-    setDragState({ activeDrags: --dragState.activeDrags });
-  }
-  const dragHandlers = { onStart: onStart, onStop: onStop };
-  return (<Draggable {...dragHandlers}>
+
+  useEffect(() => {
+    const dragStateJson = JSON.stringify(dragState);
+    localStorage.setItem(props.word.id, dragStateJson);
+  }, [dragState, props.word.id]);
+
+  const dragHandlers = { onDrag: onDrag };
+
+  const xPos = dragState.posX ? dragState.posX : 0
+  const yPos = dragState.posY ? dragState.posY : 0
+  return (<Draggable
+    {...dragHandlers}
+    position={{ x: xPos, y: yPos }}
+  >
     <div
       style={{ backgroundColor: backgroundColor }}
       onClick={() => {
