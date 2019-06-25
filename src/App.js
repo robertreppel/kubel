@@ -12,7 +12,6 @@ const App = () => {
   return (
     <div className="page">
       <h1>Kubel</h1>
-      <div>{currentContext ? `Current context: ${currentContext.name}` : <React.Fragment />}</div>
       <BoundedContextList
         currentContext={currentContext}
         setCurrentContext={setCurrentContext}

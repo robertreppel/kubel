@@ -46,6 +46,14 @@ div.box {
 }
 
 span.context {
-  margin: 2px;
+  margin: 4px;
   padding: 2px;
+}
+
+span.currentContext {
+  margin: 1px;
+  padding: 2px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 6px;
 }
