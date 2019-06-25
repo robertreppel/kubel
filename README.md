@@ -13,6 +13,8 @@ A visual design tool to understand system boundaries
 
 ## Legacy Decomposition Example: Wordpress
 
+### Mining the source code
+
 > This isn't to imply that the Wordpress code base isn't great. It just happened to have a nice long piece of source lying about which we can use as an example.
 
 https://github.com/WordPress/WordPress/blob/4c0620bdf8b3c1bac314f6b50f15ee6399710ae5/wp-admin/includes/ajax-actions.php has 5000+ lines.
@@ -28,6 +30,8 @@ wget -O - -o /dev/null  https://raw.githubusercontent.com/WordPress/WordPress/4c
 
 ... results in a list of "Ubiquitous Language" in that file. Parsing out variable- and function names names, etc. and other types of comments as well would be even better, but let's start simple.
 
+### Generate Vocabulary
+
 Take the resulting list of phrases and paste it into https://robertreppel.github.io/kubel :
 
 ![Generate Vocabulary](pictures/generate-vocabulary-page.png "Generate Vocabulary")
@@ -36,7 +40,9 @@ Hitting "Generate Vocabulary" will turn every line into something that can be dr
 
 ![Unclassified Vocabulary](pictures/unclassified-vocabulary.png "Unclassified Vocabulary")
 
-Spend some time grouping things that seem to belong together and create new Bounded Contexts (... a.k.a. "services"):
+### Exploring the Ubiquitous Language and finding Bounded Contexts
+
+Spend some time grouping things that seem to belong together and to create new Bounded Contexts (... a.k.a. "services"):
 
 ![Classified Vocabulary](pictures/classified-vocabulary.png "Classified Vocabulary")
 
