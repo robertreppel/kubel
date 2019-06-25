@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Word } from './Word';
 import { ImportWords } from './ImportWords';
 import { BoundedContextList } from './BoundedContextList';
 
 const App = () => {
-  const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(true)
-  const [isContextListVisible, setIsContextListVisible] = useState(false)
-  const [words, setWords] = useState([])
   const [currentContext, setCurrentContext] = useState(null)
+  
+  const wordsFromLocalStorage = JSON.parse(localStorage.getItem("words"))
+  const [words, setWords] = useState(wordsFromLocalStorage || [])
+  
+  const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(wordsFromLocalStorage.length > 0 ? false : true)
+  const [isContextListVisible, setIsContextListVisible] = useState(wordsFromLocalStorage.length > 0 ? true : false)
+  
+  useEffect(() => {
+    const wordJson =  JSON.stringify(words);
+    localStorage.setItem('words', wordJson);
+  }, [words]);
+
 
   return (
     <div className="page">
