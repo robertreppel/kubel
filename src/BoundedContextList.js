@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import uuidv4 from 'uuid/v4';
 import { BoundedContext } from "./BoundedContext";
+
 export const BoundedContextList = (props) => {
-  const [contexts, setContexts] = useState([]);
+  const contextsFromLocalStorage = JSON.parse(localStorage.getItem("contexts"))
+  const [contexts, setContexts] = useState(contextsFromLocalStorage || []);
+    
+  useEffect(() => {
+    const contextJson =  JSON.stringify(contexts);
+    localStorage.setItem('contexts', contextJson);
+  }, [contexts]);
 
   function getRandomColor() {
     var letters = '0123456789ABCDEF';
