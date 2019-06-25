@@ -3,6 +3,7 @@ import uuidv4 from 'uuid/v4';
 import { BoundedContext } from "./BoundedContext";
 export const BoundedContextList = (props) => {
   const [contexts, setContexts] = useState([]);
+
   function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
@@ -11,8 +12,12 @@ export const BoundedContextList = (props) => {
     }
     return color;
   }
+
+  if(!props.isContextListVisible) {
+    return(<React.Fragment />)
+  }
   return (<div>
-    <div>
+    <div className="contextList">
       {contexts.map(context => {
         return (<BoundedContext key={context.id} setCurrentContext={props.setCurrentContext} currentContext={props.currentContext} context={context} />);
       })}

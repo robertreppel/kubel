@@ -5,7 +5,8 @@ import { ImportWords } from './ImportWords';
 import { BoundedContextList } from './BoundedContextList';
 
 const App = () => {
-  const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(false)
+  const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(true)
+  const [isContextListVisible, setIsContextListVisible] = useState(false)
   const [words, setWords] = useState([])
   const [currentContext, setCurrentContext] = useState(null)
 
@@ -15,10 +16,8 @@ const App = () => {
       <BoundedContextList
         currentContext={currentContext}
         setCurrentContext={setCurrentContext}
-      />
-      <div>
-        <button onClick={() => { setIsImportWordsDialogVisible(!isImportWordsDialogVisible) }}>Add Words</button>
-      </div>
+        isContextListVisible={isContextListVisible}
+        />
       {words.map(((word, index) => {
         return (<Word key={index} word={word} currentContext={currentContext}/>)
       }))}
@@ -26,6 +25,7 @@ const App = () => {
         isImportWordsDialogVisible={isImportWordsDialogVisible}
         setIsImportWordsDialogVisible={setIsImportWordsDialogVisible}
         setWords={setWords}
+        setIsContextListVisible={setIsContextListVisible}
       />
     </div>
   );

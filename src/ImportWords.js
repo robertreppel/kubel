@@ -1,5 +1,6 @@
 import React from 'react';
 export const ImportWords = (props) => {
+
     const importWords = () => {
         const text = document.getElementById("importedWords").value;
         let importedLines = new Map();
@@ -20,7 +21,9 @@ export const ImportWords = (props) => {
         });
         props.setWords(words);
         props.setIsImportWordsDialogVisible(false);
-    };
+        props.setIsContextListVisible(true)
+    }
+
     if (props.isImportWordsDialogVisible) {
         return (<div>
             <p>Paste words here:</p>

@@ -45,6 +45,10 @@ div.box {
   margin: 2px;
 }
 
+div.contextList {
+  margin-bottom: 10px;
+}
+
 span.context {
   margin: 4px;
   padding: 2px;
