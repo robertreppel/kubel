@@ -28,7 +28,7 @@ wget -O - -o /dev/null  https://raw.githubusercontent.com/WordPress/WordPress/4c
 
 ... results in a list of "Ubiquitous Language" in that file. Parsing out variable- and function names names, etc. and other types of comments as well would be even better, but let's start simple.
 
-Take the resulting list of phrases and paste it into https://reactgo.com/deploy-react-app-github-pages/ :
+Take the resulting list of phrases and paste it into https://robertreppel.github.io/kubel :
 
 ![Generate Vocabulary](pictures/generate-vocabulary-page.png "Generate Vocabulary")
 
