@@ -11,6 +11,15 @@ A visual design tool to understand system boundaries
 - Based on Domain Driven Design concepts: Bounded Contexts and Ubiquitous Language.
 - Decide on service boundaries, in plain English
 
+
+## Getting Started
+
+```
+git clone git@github.com:robertreppel/kubel.git
+cd kubel
+yarn start
+```
+
 ## Legacy Decomposition Example: Wordpress
 
 ### Mining the source code
@@ -32,7 +41,7 @@ wget -O - -o /dev/null  https://raw.githubusercontent.com/WordPress/WordPress/4c
 
 ### Generate Vocabulary
 
-Take the resulting list of phrases and paste it into https://robertreppel.github.io/kubel :
+Take the resulting list of phrases and paste it into https://robertreppel.github.io/kubel (or your own instance at http://localhost:3000):
 
 ![Generate Vocabulary](pictures/generate-vocabulary-page.png "Generate Vocabulary")
 
