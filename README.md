@@ -24,5 +24,22 @@ wget -O - -o /dev/null  https://raw.githubusercontent.com/WordPress/WordPress/4c
 
 ... results in a list of "Ubiquitous Language" in that file. Parsing out variable- and function names names, etc. and other types of comments as well would be even better, but let's start simple.
 
-Take the resulting list of phrases and paste it into this:
+Take the resulting list of phrases and paste it into https://reactgo.com/deploy-react-app-github-pages/ :
+
+![Generate Vocabulary](pictures/generate-vocabulary-page.png "Generate Vocabulary")
+
+Hitting "Generate Vocabulary" will turn every line into something that can be dragged and dropped:
+
+![Unclassified Vocabulary](pictures/unclassified-vocabulary.png "Unclassified Vocabulary")
+
+Spend some time grouping things that seem to belong together and create new Bounded Contexts (... a.k.a. "services"):
+
+![Classified Vocabulary](pictures/classified-vocabulary.png "Classified Vocabulary")
+
+Without knowing any details of the source code, this gives an overview of what it claims to do. Once Kubel implements tracking line numbers in the source, it should be possible to get an idea about cohesiveness (how many lines between related concepts?) and to have links from the Kubel diagram directly to the source.
+
+
+
+
+
 

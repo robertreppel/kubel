@@ -25,6 +25,7 @@ export const BoundedContextList = (props) => {
   }
   return (<div>
     <div className="contextList">
+      <h4>Bounded Contexts</h4>
       {contexts.map(context => {
         return (<BoundedContext key={context.id} setCurrentContext={props.setCurrentContext} currentContext={props.currentContext} context={context} />);
       })}
