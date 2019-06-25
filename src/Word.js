@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
 
 export const Word = (props) => {
-  const [backgroundColor, setBackgroundColor] = useState("white")
-
   const dragStateFromLocalStorage = JSON.parse(localStorage.getItem(props.word.id))
   const [dragState, setDragState] = useState(dragStateFromLocalStorage || {})
+  
+  const color = dragState.color ? dragState.color : "white"
+  const [backgroundColor, setBackgroundColor] = useState(color)
 
   const onDrag = (e, position) => {
     const { x, y } = position;
@@ -30,6 +31,7 @@ export const Word = (props) => {
       onClick={() => {
         if (props.currentContext) {
           setBackgroundColor(props.currentContext.color)
+          setDragState({ ...dragState, color: props.currentContext.color })
         }
       }
       }
