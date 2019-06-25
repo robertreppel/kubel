@@ -28,14 +28,16 @@ export const Word = (props) => {
   >
     <div
       style={{ backgroundColor: backgroundColor }}
+      onDoubleClick={ () => {
+        const defaultColor = "white";
+        setBackgroundColor(defaultColor)
+        setDragState({ ...dragState, color: defaultColor.color })
+      }}
+
       onClick={() => {
         if (props.currentContext) {
           setBackgroundColor(props.currentContext.color)
           setDragState({ ...dragState, color: props.currentContext.color })
-        // } else {
-        //   const defaultColor = "white";
-        //   setBackgroundColor(defaultColor)
-        //   setDragState({ ...dragState, color: defaultColor.color })
         }
       }
       }
