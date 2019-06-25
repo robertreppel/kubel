@@ -42,5 +42,6 @@ export const BoundedContextList = (props) => {
         }}>New Context</button>
       </span>
     </div>
+    <hr />
   </div>);
 };

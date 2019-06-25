@@ -32,6 +32,10 @@ export const Word = (props) => {
         if (props.currentContext) {
           setBackgroundColor(props.currentContext.color)
           setDragState({ ...dragState, color: props.currentContext.color })
+        // } else {
+        //   const defaultColor = "white";
+        //   setBackgroundColor(defaultColor)
+        //   setDragState({ ...dragState, color: defaultColor.color })
         }
       }
       }
