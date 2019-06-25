@@ -9,14 +9,17 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #2F2F4C; */
+  height: 56px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  /* margin-left: -10px; */
 }
 
 .App-link {
@@ -46,11 +49,18 @@ div.box {
 }
 
 div.contextList {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 span.context {
   margin: 4px;
+  padding: 2px;
+}
+
+div.menuItem {
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 2px;
 }
 

@@ -20,7 +20,21 @@ const App = () => {
 
   return (
     <div className="page">
-      <h1>Kubel</h1>
+      <div className="App-header">
+        <div className="menuItem"><h2>Kubel</h2></div>
+        <div className="menuItem">
+          <button onClick={() => {
+            const retVal = window.confirm("Creating a new Kubel will delete everything here.");
+            if (retVal == true) {
+              localStorage.clear()
+              window.location.reload()
+            } 
+          }}>
+            New
+            </button>
+        </div>
+      </div>
+      <hr />
       <BoundedContextList
         currentContext={currentContext}
         setCurrentContext={setCurrentContext}
