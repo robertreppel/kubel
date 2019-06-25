@@ -3,6 +3,8 @@ import './App.css';
 import { Word } from './Word';
 import { ImportWords } from './ImportWords';
 import { BoundedContextList } from './BoundedContextList';
+import {useCallback} from 'react'
+import {useDropzone} from 'react-dropzone'
 
 const App = () => {
   const [currentContext, setCurrentContext] = useState(null)
@@ -12,6 +14,8 @@ const App = () => {
 
   const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(wordsFromLocalStorage && wordsFromLocalStorage.length > 0 ? false : true)
   const [isContextListVisible, setIsContextListVisible] = useState(wordsFromLocalStorage && wordsFromLocalStorage.length > 0 ? true : false)
+
+  const [ isFileImportVisible, setIsFileImportVisible ] = useState(false)
 
   useEffect(() => {
     const wordsJson = JSON.stringify(words);
@@ -51,7 +55,6 @@ const App = () => {
     a.click();
   }
 
-
   return (
     <div className="page">
       <div className="App-header">
@@ -62,12 +65,18 @@ const App = () => {
             </button>
         </div>
         <div className="menuItem">
+          <button onClick={() => setIsFileImportVisible(!isFileImportVisible)}>
+            Import
+          </button>
+        </div>
+        <div className="menuItem">
           <button onClick={exportJson}>
             Export
           </button>
         </div>
       </div>
       <hr />
+      <ImportFileDropzone isFileImportVisible={ isFileImportVisible }/>
       <BoundedContextList
         currentContext={currentContext}
         setCurrentContext={setCurrentContext}
@@ -86,5 +95,32 @@ const App = () => {
   );
 }
 
-export default App;
+export default App
 
+function ImportFileDropzone(props) {  const onDrop = useCallback(acceptedFiles => {
+  const reader = new FileReader()
+
+  reader.onabort = () => console.log('file reading was aborted')
+  reader.onerror = () => console.log('file reading has failed')
+  reader.onload = () => {
+    const binaryStr = reader.result
+    const kubel = JSON.parse(binaryStr);
+    kubel.forEach( item => {
+      localStorage.setItem(item.key, JSON.stringify(item.item))
+    })
+    window.location.reload()
+  }
+
+  acceptedFiles.forEach(file => reader.readAsBinaryString(file))
+}, [])
+const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+
+if(!props.isFileImportVisible) {
+  return(<React.Fragment />)
+}
+return (
+  <div className="importFileDropzone" {...getRootProps()}>
+    <input {...getInputProps()} />
+    <p>Drag 'n' drop a file here, or click to select files</p>
+  </div>
+)}

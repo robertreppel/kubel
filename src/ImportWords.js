@@ -28,12 +28,13 @@ export const ImportWords = (props) => {
 
     if (props.isImportWordsDialogVisible) {
         return (<div>
-            <p>Paste words here:</p>
+            <h4>Paste text here</h4>
+            <p>Every line of text will be a phrase which can be grouped with other phrases to determine system boundaries based on Ubiquitous Language.</p>
             <div>
                 <textarea id="importedWords" rows={20} cols={50}></textarea>
             </div>
             <div>
-                <button onClick={importWords}>Import</button>
+                <button onClick={importWords}>Generate Vocabulary</button>
             </div>
         </div>);
     }
