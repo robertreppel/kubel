@@ -32,19 +32,19 @@ export const Toolbar = (props) => {
   return (<React.Fragment>
     <div className="menuItem"><h2>Kubel</h2></div>
     <div className="menuItem">
-      <button onClick={createNew}>
+      <a href="#" onClick={createNew}>
         New
-  </button>
+      </a>
     </div>
     <div className="menuItem">
-      <button onClick={() => props.setIsFileImportVisible(!props.isFileImportVisible)}>
+      <a href="#" onClick={ props.toggleImportFileDragAreaVisible }>
         Import
-    </button>
+    </a>
     </div>
     <div className="menuItem">
-      <button onClick={exportJson}>
+      <a href="#" onClick={exportJson}>
         Export
-    </button>
+    </a>
     </div>
   </React.Fragment>);
 };

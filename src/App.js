@@ -22,6 +22,9 @@ const App = () => {
     localStorage.setItem('words', wordsJson);
   }, [words]);
 
+  const toggleImportFileDragAreaVisible = () => {
+    setIsFileImportVisible(!isFileImportVisible)
+  }
 
   return (
     <React.Fragment>
@@ -38,10 +41,10 @@ const App = () => {
         </a>
       </div>    <div className="page">
         <div className="App-header">
-          <Toolbar setIsFileImportVisible={setIsFileImportVisible} />
+          <Toolbar toggleImportFileDragAreaVisible={toggleImportFileDragAreaVisible} />
         </div>
         <hr />
-        <ImportFileDropzone isFileImportVisible={isFileImportVisible} isFileImportVisible={isFileImportVisible} />
+        <ImportFileDropzone isFileImportVisible={isFileImportVisible}  />
         <BoundedContextList
           currentContext={currentContext}
           setCurrentContext={setCurrentContext}
