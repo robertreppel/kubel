@@ -1,4 +1,6 @@
 import React from 'react';
+import './Toolbar.css';
+
 export const Toolbar = (props) => {
   const createNew = () => {
     const retVal = window.confirm("Creating a new Kubel will delete everything here.");
@@ -32,19 +34,19 @@ export const Toolbar = (props) => {
   return (<React.Fragment>
     <div className="menuItem"><h2>Kubel</h2></div>
     <div className="menuItem">
-      <a href="#" onClick={createNew}>
+      <button className="menu" onClick={createNew}>
         New
-      </a>
+      </button>
     </div>
     <div className="menuItem">
-      <a href="#" onClick={ props.toggleImportFileDragAreaVisible }>
+      <button className="menu" onClick={ props.toggleImportFileDragAreaVisible }>
         Import
-    </a>
+      </button>
     </div>
     <div className="menuItem">
-      <a href="#" onClick={exportJson}>
+      <button className="menu" onClick={exportJson}>
         Export
-    </a>
+    </button>
     </div>
   </React.Fragment>);
 };
