@@ -14,7 +14,7 @@ const App = () => {
   const [isImportWordsDialogVisible, setIsImportWordsDialogVisible] = useState(wordsFromLocalStorage && wordsFromLocalStorage.length > 0 ? false : true)
   const [isContextListVisible, setIsContextListVisible] = useState(wordsFromLocalStorage && wordsFromLocalStorage.length > 0 ? true : false)
 
-  const [ isFileImportVisible, setIsFileImportVisible ] = useState(false)
+  const [isFileImportVisible, setIsFileImportVisible] = useState(false)
 
   useEffect(() => {
     const wordsJson = JSON.stringify(words);
@@ -55,42 +55,56 @@ const App = () => {
   }
 
   return (
-    <div className="page">
-      <div className="App-header">
-        <div className="menuItem"><h2>Kubel</h2></div>
-        <div className="menuItem">
-          <button onClick={createNew}>
-            New
+    <React.Fragment>
+      <div>
+        <a
+          href="https://github.com/robertreppel/kubel">
+          <img
+            style={{ position: "absolute", top: 0, right: 0}}
+            width="149"
+            height="149"
+            src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png?resize=149%2C149"
+            className="attachment-full size-full"
+            alt="Fork me on GitHub" data-recalc-dims="1" />
+        </a>
+      </div>    <div className="page">
+        <div className="App-header">
+          <div className="menuItem"><h2>Kubel</h2></div>
+          <div className="menuItem">
+            <button onClick={createNew}>
+              New
             </button>
-        </div>
-        <div className="menuItem">
-          <button onClick={() => setIsFileImportVisible(!isFileImportVisible)}>
-            Import
+          </div>
+          <div className="menuItem">
+            <button onClick={() => setIsFileImportVisible(!isFileImportVisible)}>
+              Import
           </button>
-        </div>
-        <div className="menuItem">
-          <button onClick={exportJson}>
-            Export
+          </div>
+          <div className="menuItem">
+            <button onClick={exportJson}>
+              Export
           </button>
+          </div>
+
         </div>
+        <hr />
+        <ImportFileDropzone isFileImportVisible={isFileImportVisible} />
+        <BoundedContextList
+          currentContext={currentContext}
+          setCurrentContext={setCurrentContext}
+          isContextListVisible={isContextListVisible}
+        />
+        {words.map(((word) => {
+          return (<Word key={word.id} word={word} currentContext={currentContext} />)
+        }))}
+        <ImportWords
+          isImportWordsDialogVisible={isImportWordsDialogVisible}
+          setIsImportWordsDialogVisible={setIsImportWordsDialogVisible}
+          setWords={setWords}
+          setIsContextListVisible={setIsContextListVisible}
+        />
       </div>
-      <hr />
-      <ImportFileDropzone isFileImportVisible={ isFileImportVisible }/>
-      <BoundedContextList
-        currentContext={currentContext}
-        setCurrentContext={setCurrentContext}
-        isContextListVisible={isContextListVisible}
-      />
-      {words.map(((word) => {
-        return (<Word key={word.id} word={word} currentContext={currentContext} />)
-      }))}
-      <ImportWords
-        isImportWordsDialogVisible={isImportWordsDialogVisible}
-        setIsImportWordsDialogVisible={setIsImportWordsDialogVisible}
-        setWords={setWords}
-        setIsContextListVisible={setIsContextListVisible}
-      />
-    </div>
+    </React.Fragment>
   );
 }
 
