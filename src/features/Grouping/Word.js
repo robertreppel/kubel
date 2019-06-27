@@ -4,7 +4,7 @@ import Draggable from 'react-draggable';
 export const Word = (props) => {
   const dragStateFromLocalStorage = JSON.parse(localStorage.getItem(props.word.id))
   const [dragState, setDragState] = useState(dragStateFromLocalStorage || {})
-  
+
   const color = dragState.color ? dragState.color : "white"
   const [backgroundColor, setBackgroundColor] = useState(color)
 
@@ -22,26 +22,31 @@ export const Word = (props) => {
 
   const xPos = dragState.posX ? dragState.posX : 0
   const yPos = dragState.posY ? dragState.posY : 0
+
+  const colorizeWithColorOfBoundedContext = () => {
+    if (props.currentContext) {
+      setBackgroundColor(props.currentContext.color);
+      setDragState({ ...dragState, color: props.currentContext.color });
+    }
+  };
+
+  const resetToDefaultColor = () => {
+    const defaultColor = "white";
+    setBackgroundColor(defaultColor);
+    setDragState({ ...dragState, color: defaultColor.color });
+  };
+
   return (<Draggable
     {...dragHandlers}
     position={{ x: xPos, y: yPos }}
   >
     <div
+      className="vocabulary"
       style={{ backgroundColor: backgroundColor }}
-      onDoubleClick={ () => {
-        const defaultColor = "white";
-        setBackgroundColor(defaultColor)
-        setDragState({ ...dragState, color: defaultColor.color })
-      }}
+      onDoubleClick={resetToDefaultColor}
 
-      onClick={() => {
-        if (props.currentContext) {
-          setBackgroundColor(props.currentContext.color)
-          setDragState({ ...dragState, color: props.currentContext.color })
-        }
+      onClick={colorizeWithColorOfBoundedContext
       }
-      }
-      className="box"
     >{props.word.text}</div>
   </Draggable>);
 };

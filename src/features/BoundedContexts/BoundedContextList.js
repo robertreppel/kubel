@@ -22,8 +22,9 @@ export const BoundedContextList = (props) => {
   return (
     <div>
       <div>
-        <span><h4 style={{ display: "inline-block", marginRight: "10px" }}>Bounded Contexts</h4></span><NewContext createNewBoundedContext={createNewBoundedContext} />
+        <span><h4 style={{ display: "inline-block", marginRight: "10px", color: " #F8FAFB" }}>Contexts</h4></span><NewContext createNewBoundedContext={createNewBoundedContext} />
       </div>
+      <hr />
       <div className="contextList">
         {contexts.map(context => {
           return (<BoundedContext key={context.id} setCurrentContext={props.setCurrentContext} currentContext={props.currentContext} context={context} />);

@@ -43,13 +43,15 @@ const App = () => {
         <div className="App-header">
           <Toolbar toggleImportFileDragAreaVisible={toggleImportFileDragAreaVisible} />
         </div>
-        <div className="content">
-          <ImportFileDropzone isFileImportVisible={isFileImportVisible} />
+        <div style={{ backgroundColor: "#81A3D9", paddingLeft: "10px", paddingRight: "10px"}}>
           <BoundedContextList
             currentContext={currentContext}
             setCurrentContext={setCurrentContext}
             isContextListVisible={isContextListVisible}
           />
+        </div>
+        <div className="content">
+          <ImportFileDropzone isFileImportVisible={isFileImportVisible} />
           {words.map(((word) => {
             return (<Word key={word.id} word={word} currentContext={currentContext} />)
           }))}

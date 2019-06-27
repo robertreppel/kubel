@@ -14,12 +14,8 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  /* font-size: calc(10px + 2vmin); */
-  /* color: white; */
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-bottom: 5px;
-  /* margin-left: -10px; */
 }
 
 .App-link {
@@ -39,7 +35,7 @@ div.content {
   padding: 10px;
 }
 
-div.box {
+div.vocabulary {
   border-style: solid;
   border-width: 1px;
   display:inline-block;
@@ -49,8 +45,7 @@ div.box {
 }
 
 div.contextList {
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 span.context {
