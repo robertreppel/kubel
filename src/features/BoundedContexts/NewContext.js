@@ -1,6 +1,6 @@
 import React from 'react';
 import uuidv4 from 'uuid/v4';
-import './App.css'
+import './../../App.css'
 
 export const NewContext = (props) => {
   function getRandomColor() {

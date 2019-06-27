@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Word } from './Word';
-import { ImportWords } from './ImportWords';
-import { BoundedContextList } from './BoundedContextList';
-import { ImportFileDropzone } from './ImportFileDropzone';
-import { Toolbar } from './Toolbar';
+import { Word } from './features/Grouping/Word';
+import { ImportWords } from './features/Import/ImportWords';
+import { BoundedContextList } from './features/BoundedContexts/BoundedContextList';
+import { ImportFileDropzone } from './features/Import/ImportFileDropzone';
+import { Toolbar } from './features/Toolbar/Toolbar';
 
 const App = () => {
   const [currentContext, setCurrentContext] = useState(null)
