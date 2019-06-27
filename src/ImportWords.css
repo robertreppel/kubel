@@ -1,0 +1,14 @@
+
+div.importWordsContentArea {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.importWordsContentArea > div {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}

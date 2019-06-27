@@ -1,5 +1,6 @@
 import React from 'react';
 import uuidv4 from 'uuid/v4';
+import './ImportWords.css';
 
 export const ImportWords = (props) => {
 
@@ -9,7 +10,7 @@ export const ImportWords = (props) => {
         text.split("\n").map((word) => {
             const myRegexp = /^(\d*):(.*)/;
             const match = myRegexp.exec(word);
-            if(match) {
+            if (match) {
                 const lineNo = match[1]
                 const text = match[2]
                 setWord(text, importedLines, lineNo);
@@ -29,16 +30,19 @@ export const ImportWords = (props) => {
     }
 
     if (props.isImportWordsDialogVisible) {
-        return (<div>
-            <h4>Paste text here</h4>
-            <p>Every line of text will be a phrase which can be grouped with other phrases to determine system boundaries based on Ubiquitous Language.</p>
-            <div>
-                <textarea id="importedWords" rows={20} cols={50}></textarea>
-            </div>
-            <div>
-                <button onClick={importWords}>Generate Vocabulary</button>
-            </div>
-        </div>);
+        return (
+            <div className="importWordsContentArea">
+                <div>
+                    <h4>Paste text here</h4>
+                    <p>Every line of text will be a phrase which can be grouped with other phrases to determine system boundaries based on Ubiquitous Language.</p>
+                </div>
+                <div>
+                    <textarea id="importedWords" style={{ width: "90vw" }} rows="20"></textarea>
+                </div>
+                <div>
+                    <button onClick={importWords}>Generate Vocabulary</button>
+                </div>
+            </div>);
     }
     else {
         return (<React.Fragment />);
