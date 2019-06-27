@@ -1,9 +1,9 @@
 
 button.menu {
-  background-color: white; 
-  color: black; 
-  text-decoration: underline black; 
+  text-decoration: underline #F8FAFB; 
   border: none;
+  color: #F8FAFB;
+  background-color: #33324C;
 }
 
 div.menuItem {
@@ -12,6 +12,7 @@ div.menuItem {
 }
 
 div.logoText {
-  margin-left: 0px;
+  margin-left: 20px;
   margin-right: 20px;
+  color: #F8FAFB;
 }

@@ -39,26 +39,28 @@ const App = () => {
             className="attachment-full size-full"
             alt="Fork me on GitHub" data-recalc-dims="1" />
         </a>
-      </div>    <div className="page">
+      </div>
+      <div className="page">
         <div className="App-header">
           <Toolbar toggleImportFileDragAreaVisible={toggleImportFileDragAreaVisible} />
         </div>
-        <hr />
-        <ImportFileDropzone isFileImportVisible={isFileImportVisible}  />
-        <BoundedContextList
-          currentContext={currentContext}
-          setCurrentContext={setCurrentContext}
-          isContextListVisible={isContextListVisible}
-        />
-        {words.map(((word) => {
-          return (<Word key={word.id} word={word} currentContext={currentContext} />)
-        }))}
-        <ImportWords
-          isImportWordsDialogVisible={isImportWordsDialogVisible}
-          setIsImportWordsDialogVisible={setIsImportWordsDialogVisible}
-          setWords={setWords}
-          setIsContextListVisible={setIsContextListVisible}
-        />
+        <div className="content">
+          <ImportFileDropzone isFileImportVisible={isFileImportVisible} />
+          <BoundedContextList
+            currentContext={currentContext}
+            setCurrentContext={setCurrentContext}
+            isContextListVisible={isContextListVisible}
+          />
+          {words.map(((word) => {
+            return (<Word key={word.id} word={word} currentContext={currentContext} />)
+          }))}
+          <ImportWords
+            isImportWordsDialogVisible={isImportWordsDialogVisible}
+            setIsImportWordsDialogVisible={setIsImportWordsDialogVisible}
+            setWords={setWords}
+            setIsContextListVisible={setIsContextListVisible}
+          />
+        </div>
       </div>
     </React.Fragment>
   );

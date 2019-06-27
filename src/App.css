@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  /* background-color: #2F2F4C; */
+  background-color: #33324C;
   height: 56px;
   display: flex;
   align-items: center;
@@ -35,8 +35,8 @@
   }
 }
 
-div.page {
-  margin: 10px;
+div.content {
+  padding: 10px;
 }
 
 div.box {
