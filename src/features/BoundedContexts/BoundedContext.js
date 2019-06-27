@@ -1,4 +1,6 @@
 import React from 'react';
+import './BoundedContext.css'
+
 export const BoundedContext = (props) => {
   if (props.currentContext && props.currentContext.id === props.context.id) {
     return (

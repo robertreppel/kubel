@@ -26,7 +26,7 @@ export const NewContext = (props) => {
           contextNameInput.value = "";
           props.createNewBoundedContext(newContext);
         }
-      }}>New</button>
+      }}>Create</button>
     </span>
   </React.Fragment>);
 };

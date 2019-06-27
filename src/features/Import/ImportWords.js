@@ -4,7 +4,7 @@ import './ImportWords.css';
 
 export const ImportWords = (props) => {
 
-    const importWords = () => {
+    const doImport = () => {
         const text = document.getElementById("importedWords").value;
         let importedLines = new Map();
         text.split("\n").map((word) => {
@@ -20,13 +20,27 @@ export const ImportWords = (props) => {
 
             return null;
         });
-        let words = [];
-        importedLines.forEach((v, k) => {
-            words.push({ id: uuidv4(), text: k, count: v });
-        });
-        props.setWords(words);
-        props.setIsImportWordsDialogVisible(false);
-        props.setIsContextListVisible(true)
+        if(importedLines.size > 0) {
+            let words = [];
+            importedLines.forEach((v, k) => {
+                words.push({ id: uuidv4(), text: k, count: v });
+            });
+            props.setWords(words);
+            props.setIsImportWordsDialogVisible(false);
+            props.setIsContextListVisible(true)
+        }
+    }
+
+    function addPhraseToVocabulary(text, importedLines) {
+        const trimmedText = text.trim()
+        if (trimmedText.length  > 0) {
+            if (importedLines.has(text)) {
+                importedLines.set([]);
+            }
+            else {
+                importedLines.set(text, []);
+            }
+        }
     }
 
     if (props.isImportWordsDialogVisible) {
@@ -40,7 +54,7 @@ export const ImportWords = (props) => {
                     <textarea id="importedWords" style={{ width: "90vw" }} rows="20"></textarea>
                 </div>
                 <div>
-                    <button className="button commandBtn" onClick={importWords}>Generate Vocabulary</button>
+                    <button className="button commandBtn" onClick={doImport}>Generate Vocabulary</button>
                 </div>
             </div>);
     }
@@ -49,15 +63,5 @@ export const ImportWords = (props) => {
     }
 };
 
-function addPhraseToVocabulary(text, importedLines) {
-    const trimmedText = text.trim()
-    if (trimmedText.length  > 0) {
-        if (importedLines.has(text)) {
-            importedLines.set([]);
-        }
-        else {
-            importedLines.set(text, []);
-        }
-    }
-}
+
 

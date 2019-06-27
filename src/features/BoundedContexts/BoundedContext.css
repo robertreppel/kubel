@@ -1,0 +1,16 @@
+span.context {
+    margin: 4px;
+    padding: 6px;
+    color:  #F8FAFB;
+  }
+
+  span.currentContext {
+    margin: 4px;
+    padding: 2px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #F8FAFB;
+    color:  #F8FAFB;
+    border-width: 4px;
+  }
+  

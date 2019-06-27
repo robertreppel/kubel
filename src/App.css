@@ -45,12 +45,8 @@ div.vocabulary {
 }
 
 div.contextList {
-  margin: 20px;
-}
-
-span.context {
-  margin: 4px;
-  padding: 2px;
+  margin: 10px;
+  padding: 15px
 }
 
 div.importFileDropzone {
@@ -59,14 +55,6 @@ div.importFileDropzone {
   padding: 2px;
   border-style: solid;
   border-width: 3px;
-}
-
-span.currentContext {
-  margin: 1px;
-  padding: 2px;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 6px;
 }
 
 .button {
@@ -104,4 +92,13 @@ div.forkOnGithub {
     right: 0;
     visibility: hidden;
   }
+}
+
+div.onboardingText {
+  color:  #F8FAFB;
+  padding: 10px;
+}
+
+div.onboardingTextLine {
+  margin: 5px;
 }

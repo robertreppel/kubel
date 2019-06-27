@@ -42,7 +42,7 @@ export const Word = (props) => {
   >
     <div
       className="vocabulary"
-      style={{ backgroundColor: backgroundColor }}
+      style={{ backgroundColor: backgroundColor, color: "black", padding: "3px" }}
       onDoubleClick={resetToDefaultColor}
 
       onClick={colorizeWithColorOfBoundedContext
