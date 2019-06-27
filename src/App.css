@@ -73,3 +73,27 @@ span.currentContext {
   border-width: 3px;
   border-radius: 6px;
 }
+
+.button {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.commandBtn {
+  background-color: #EA6667;
+  color:  #F8FAFB;
+}
+
+

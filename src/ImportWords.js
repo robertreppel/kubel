@@ -40,7 +40,7 @@ export const ImportWords = (props) => {
                     <textarea id="importedWords" style={{ width: "90vw" }} rows="20"></textarea>
                 </div>
                 <div>
-                    <button onClick={importWords}>Generate Vocabulary</button>
+                    <button className="button commandBtn" onClick={importWords}>Generate Vocabulary</button>
                 </div>
             </div>);
     }

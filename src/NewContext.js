@@ -1,5 +1,6 @@
 import React from 'react';
 import uuidv4 from 'uuid/v4';
+import './App.css'
 
 export const NewContext = (props) => {
   function getRandomColor() {
@@ -13,7 +14,7 @@ export const NewContext = (props) => {
   return (<React.Fragment>
     <span style={{ marginRight: "10px" }}><input id="newContextName"></input></span>
     <span>
-      <button onClick={() => {
+      <button className="button commandBtn" onClick={() => {
         const contextNameInput = document.getElementById("newContextName");
         const trimmedContextName = contextNameInput.value.trim()
         if (trimmedContextName.length > 0) {
