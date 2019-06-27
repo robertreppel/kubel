@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kubel/static/css/main.27a59f18.chunk.css",
-    "main.js": "/kubel/static/js/main.fe201931.chunk.js",
-    "main.js.map": "/kubel/static/js/main.fe201931.chunk.js.map",
+    "main.css": "/kubel/static/css/main.d7345535.chunk.css",
+    "main.js": "/kubel/static/js/main.664469a5.chunk.js",
+    "main.js.map": "/kubel/static/js/main.664469a5.chunk.js.map",
     "runtime~main.js": "/kubel/static/js/runtime~main.707b6072.js",
     "runtime~main.js.map": "/kubel/static/js/runtime~main.707b6072.js.map",
-    "static/js/2.8c67d141.chunk.js": "/kubel/static/js/2.8c67d141.chunk.js",
-    "static/js/2.8c67d141.chunk.js.map": "/kubel/static/js/2.8c67d141.chunk.js.map",
+    "static/js/2.bfca0059.chunk.js": "/kubel/static/js/2.bfca0059.chunk.js",
+    "static/js/2.bfca0059.chunk.js.map": "/kubel/static/js/2.bfca0059.chunk.js.map",
     "index.html": "/kubel/index.html",
-    "precache-manifest.9581273dc70cb109c7922b8c5495af85.js": "/kubel/precache-manifest.9581273dc70cb109c7922b8c5495af85.js",
+    "precache-manifest.1025fc1a0bd4d87853de995f4200767f.js": "/kubel/precache-manifest.1025fc1a0bd4d87853de995f4200767f.js",
     "service-worker.js": "/kubel/service-worker.js",
-    "static/css/main.27a59f18.chunk.css.map": "/kubel/static/css/main.27a59f18.chunk.css.map"
+    "static/css/main.d7345535.chunk.css.map": "/kubel/static/css/main.d7345535.chunk.css.map"
   }
 }
