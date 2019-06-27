@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      {/* <div style={{ position: "absolute", top: 0, right: 0 }}>
+      <div className="forkOnGithub">
         <a
           href="https://github.com/robertreppel/kubel">
           <img
@@ -38,7 +38,7 @@ const App = () => {
             className="attachment-full size-full"
             alt="Fork me on GitHub" data-recalc-dims="1" />
         </a>
-      </div> */}
+      </div>
       <div className="page">
         <div className="App-header">
           <Toolbar toggleImportFileDragAreaVisible={toggleImportFileDragAreaVisible} />
