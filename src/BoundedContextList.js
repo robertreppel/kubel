@@ -11,7 +11,6 @@ export const BoundedContextList = (props) => {
     setContexts([...contexts, newContext]);
   }
 
-
   useEffect(() => {
     const contextJson = JSON.stringify(contexts);
     localStorage.setItem('contexts', contextJson);

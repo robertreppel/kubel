@@ -15,13 +15,16 @@ export const NewContext = (props) => {
     <span>
       <button onClick={() => {
         const contextNameInput = document.getElementById("newContextName");
-        const newContext = {
-          id: uuidv4(),
-          name: contextNameInput.value,
-          color: getRandomColor()
-        };
-        contextNameInput.value = "";
-        props.createNewBoundedContext(newContext);
+        const trimmedContextName = contextNameInput.value.trim()
+        if (trimmedContextName.length > 0) {
+          const newContext = {
+            id: uuidv4(),
+            name: trimmedContextName,
+            color: getRandomColor()
+          };
+          contextNameInput.value = "";
+          props.createNewBoundedContext(newContext);
+        }
       }}>New</button>
     </span>
   </React.Fragment>);

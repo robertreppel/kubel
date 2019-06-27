@@ -13,9 +13,9 @@ export const ImportWords = (props) => {
             if (match) {
                 const lineNo = match[1]
                 const text = match[2]
-                setWord(text, importedLines, lineNo);
+                addPhraseToVocabulary(text, importedLines, lineNo);
             } else {
-                setWord(word, importedLines);
+                addPhraseToVocabulary(word, importedLines);
             }
 
             return null;
@@ -49,8 +49,9 @@ export const ImportWords = (props) => {
     }
 };
 
-function setWord(text, importedLines) {
-    if (text) {
+function addPhraseToVocabulary(text, importedLines) {
+    const trimmedText = text.trim()
+    if (trimmedText.length  > 0) {
         if (importedLines.has(text)) {
             importedLines.set([]);
         }
