@@ -5,3 +5,13 @@ button.menu {
   text-decoration: underline black; 
   border: none;
 }
+
+div.menuItem {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+div.logoText {
+  margin-left: 0px;
+  margin-right: 20px;
+}

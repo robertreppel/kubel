@@ -32,7 +32,7 @@ export const Toolbar = (props) => {
     a.click();
   }
   return (<React.Fragment>
-    <div className="menuItem"><h2>Kubel</h2></div>
+    <div className="logoText"><h2>Kubel</h2></div>
     <div className="menuItem">
       <button className="menu" onClick={createNew}>
         New
