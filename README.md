@@ -57,6 +57,13 @@ Spend some time grouping things that seem to belong together and to create new B
 
 Without knowing any details of the source code, this gives an overview of what it claims to do. Once Kubel implements tracking line numbers in the source, it should be possible to get an idea about cohesiveness (how many lines between related concepts?) and to have links from the Kubel diagram directly to the source.
 
+## Contributions Welcome
+
+* Didn't get to finishing the part which associates line numbers with vocabulary so that it's possible to go to and view the various pieces of source code involved.
+* Some kind of language-specific plugin system for extracting (e.g.) comments, variable names, function names and class names would be nice. 
+* Kubel is hackathon-level code and could do with a prettier UI with a consistent design language. Maybe something like https://material-ui.com .
+* Support for multiple input files so that entire repos can be analyzed. 
+* ... etc.
 
 
 
