@@ -3,7 +3,7 @@ import './Toolbar.css';
 
 export const Toolbar = (props) => {
   const createNew = () => {
-    const retVal = window.confirm("Creating a new Kubel will delete everything here.");
+    const retVal = window.confirm("Creating a new Kubel project will delete everything here.");
     if (retVal === true) {
       localStorage.clear();
       window.location.reload();
@@ -15,7 +15,7 @@ export const Toolbar = (props) => {
       const item = JSON.parse(localStorage.getItem(key));
       projectJson.push({ key: key, item: item });
     }
-    let fileName = window.prompt("Export As:");
+    let fileName = window.prompt("Export file name:");
     if (!fileName) {
       fileName = "Untitled";
     }

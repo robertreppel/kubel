@@ -22,6 +22,6 @@ export const ImportFileDropzone = (props) => {
   }
   return (<div className="importFileDropzone" {...getRootProps()}>
     <input {...getInputProps()} />
-    <p>Drag 'n' drop a file here, or click to select files</p>
+    <p><strong>Import Project:</strong> Drag 'n' drop a previously exported Kubel file here, or click to select file</p>
   </div>);
 };
