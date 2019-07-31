@@ -3,7 +3,7 @@ import { BoundedContext } from "./BoundedContext";
 import { NewContext } from './NewContext';
 
 export const BoundedContextList = (props) => {
-  window.ga('set', 'page', '/boundedcontexts');
+  window.ga('set', 'page', '/bounded-contexts-page');
   window.ga('send', 'pageview');
 
   const contextsFromLocalStorage = JSON.parse(localStorage.getItem("contexts"))

@@ -3,7 +3,7 @@ import uuidv4 from 'uuid/v4';
 import './ImportWords.css';
 
 export const ImportWords = (props) => {
-    window.ga('set', 'page', '/home');
+    window.ga('set', 'page', '/source-text-input-page');
     window.ga('send', 'pageview');
 
     const doImport = () => {
