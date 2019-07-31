@@ -6,6 +6,7 @@ export const Toolbar = (props) => {
     window.ga('set', 'page', '/new-project');
     window.ga('send', 'pageview');
     const retVal = window.confirm("Creating a new Kubel project will delete everything here.");
+    window.ga('send', 'event', 'Project', 'Created');
     if (retVal === true) {
       localStorage.clear();
       window.location.reload();
@@ -28,6 +29,7 @@ export const Toolbar = (props) => {
       fileName = `${fileName}.json`;
     }
     download(JSON.stringify(projectJson), fileName, 'text/json');
+    window.ga('send', 'event', 'Project', 'Exported');
   };
 
   function download(content, fileName, contentType) {
@@ -37,7 +39,7 @@ export const Toolbar = (props) => {
     a.download = fileName;
     a.click();
   }
-  
+
   return (<React.Fragment>
     <div className="logoText"><h2>Kubel</h2></div>
     <p className="navText">Service Boundary Explorer</p>
