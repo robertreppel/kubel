@@ -16,3 +16,10 @@ div.logoText {
   margin-right: 30px;
   color: #F8FAFB;
 }
+
+p.navText {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 15px;
+  color: #F8FAFB;
+}

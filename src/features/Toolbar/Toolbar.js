@@ -33,6 +33,7 @@ export const Toolbar = (props) => {
   }
   return (<React.Fragment>
     <div className="logoText"><h2>Kubel</h2></div>
+    <p className="navText">Service Boundary Explorer</p>
     <div className="menuItem">
       <button className="menu" onClick={createNew}>
         New
