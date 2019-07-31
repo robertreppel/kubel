@@ -3,6 +3,8 @@ import uuidv4 from 'uuid/v4';
 import './ImportWords.css';
 
 export const ImportWords = (props) => {
+    window.ga('set', 'page', '/home');
+    window.ga('send', 'pageview');
 
     const doImport = () => {
         const text = document.getElementById("importedWords").value;
@@ -46,7 +48,7 @@ export const ImportWords = (props) => {
     if (props.isImportWordsDialogVisible) {
         return (
             <div className="importWordsContentArea">
-                <div><h2>Getting Started: <a href="https://github.com/robertreppel/kubel" target="_blank">Usage Example/Walk-Through</a></h2></div>
+                <div><h2>Getting Started: <a href="https://github.com/robertreppel/kubel" rel="noopener noreferrer" target="_blank">Usage Example/Walk-Through</a></h2></div>
                 <div>
                     <h4>Paste text here</h4>
                     <p>Every line of text will be a phrase which can be grouped with other phrases to determine system boundaries based on Ubiquitous Language.</p>
