@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kubel/static/css/main.f3f226ce.chunk.css",
-    "main.js": "/kubel/static/js/main.10a34ffa.chunk.js",
-    "main.js.map": "/kubel/static/js/main.10a34ffa.chunk.js.map",
+    "main.js": "/kubel/static/js/main.f8616898.chunk.js",
+    "main.js.map": "/kubel/static/js/main.f8616898.chunk.js.map",
     "runtime~main.js": "/kubel/static/js/runtime~main.707b6072.js",
     "runtime~main.js.map": "/kubel/static/js/runtime~main.707b6072.js.map",
     "static/js/2.86af964c.chunk.js": "/kubel/static/js/2.86af964c.chunk.js",
     "static/js/2.86af964c.chunk.js.map": "/kubel/static/js/2.86af964c.chunk.js.map",
     "index.html": "/kubel/index.html",
-    "precache-manifest.ac0f245c3cd759ae06aae603d680ee76.js": "/kubel/precache-manifest.ac0f245c3cd759ae06aae603d680ee76.js",
+    "precache-manifest.1233f545fecade41a86bd926ab200379.js": "/kubel/precache-manifest.1233f545fecade41a86bd926ab200379.js",
     "service-worker.js": "/kubel/service-worker.js",
     "static/css/main.f3f226ce.chunk.css.map": "/kubel/static/css/main.f3f226ce.chunk.css.map"
   }
