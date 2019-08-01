@@ -4,20 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// Import just the plugins you want to use.
 import 'autotrack/lib/plugins/event-tracker';
-import 'autotrack/lib/plugins/outbound-link-tracker';
-import 'autotrack/lib/plugins/url-change-tracker';
 
-window.ga('create', 'UA-XXXXXXXXX-X', 'auto');
+// Before yarn build, set an environment variable with your own Google Analytics tracking code: export REACT_APP_KUBEL_GOOGLE_ANALYTICS_TRACKINGCODE=UA-XXXXXXXXX-X
+window.ga('create', process.env.REACT_APP_KUBEL_GOOGLE_ANALYTICS_TRACKINGCODE, 'auto');
 
 // Only require the plugins you've imported above.
 window.ga('require', 'eventTracker');
-window.ga('require', 'outboundLinkTracker');
-window.ga('require', 'urlChangeTracker');
-
 window.ga('send', 'pageview');
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
