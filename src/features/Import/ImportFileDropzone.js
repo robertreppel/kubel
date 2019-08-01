@@ -15,6 +15,7 @@ export const ImportFileDropzone = (props) => {
       window.location.reload();
     };
     acceptedFiles.forEach(file => reader.readAsBinaryString(file));
+    window.ga('send', 'event', 'Project', 'Imported');
   }, []);
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
   if (!props.isFileImportVisible) {

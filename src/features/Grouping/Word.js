@@ -13,12 +13,16 @@ export const Word = (props) => {
     setDragState({ ...dragState, posX: x, posY: y, word: props })
   }
 
+  const onStop = (e, position) => {
+    window.ga('send', 'event', 'Phrase', 'Moved');
+  }
+
   useEffect(() => {
     const dragStateJson = JSON.stringify(dragState);
     localStorage.setItem(props.word.id, dragStateJson);
   }, [dragState, props.word.id]);
 
-  const dragHandlers = { onDrag: onDrag };
+  const dragHandlers = { onDrag: onDrag, onStop: onStop };
 
   const xPos = dragState.posX ? dragState.posX : 0
   const yPos = dragState.posY ? dragState.posY : 0
@@ -27,13 +31,15 @@ export const Word = (props) => {
     if (props.currentContext) {
       setBackgroundColor(props.currentContext.color);
       setDragState({ ...dragState, color: props.currentContext.color });
+      window.ga('send', 'event', 'Phrase', 'AddedToContext');
     }
   };
-
+  
   const resetToDefaultColor = () => {
     const defaultColor = "white";
     setBackgroundColor(defaultColor);
     setDragState({ ...dragState, color: defaultColor.color });
+    window.ga('send', 'event', 'Phrase', 'RemovedFromContext');
   };
 
   return (<Draggable

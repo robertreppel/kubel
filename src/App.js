@@ -23,6 +23,8 @@ const App = () => {
   }, [words]);
 
   const toggleImportFileDragAreaVisible = () => {
+    window.ga('set', 'page', '/import-project');
+    window.ga('send', 'pageview');
     setIsFileImportVisible(!isFileImportVisible)
   }
 
@@ -43,7 +45,7 @@ const App = () => {
         <div className="App-header">
           <Toolbar toggleImportFileDragAreaVisible={toggleImportFileDragAreaVisible} />
         </div>
-        <div style={{ backgroundColor: "#81A3D9", paddingLeft: "10px", paddingRight: "10px"}}>
+        <div style={{ backgroundColor: "#81A3D9", paddingLeft: "10px", paddingRight: "10px" }}>
           <BoundedContextList
             currentContext={currentContext}
             setCurrentContext={setCurrentContext}
