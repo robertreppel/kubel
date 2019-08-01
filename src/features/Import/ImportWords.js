@@ -30,7 +30,7 @@ export const ImportWords = (props) => {
             props.setWords(words);
             props.setIsImportWordsDialogVisible(false);
             props.setIsContextListVisible(true)
-            window.ga('send', 'event', 'Vocabulary', 'Generated');
+            window.ga('send', 'event', 'Vocabulary', 'VocabularyGenerated');
         }
     }
 

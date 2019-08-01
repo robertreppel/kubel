@@ -14,7 +14,7 @@ export const Word = (props) => {
   }
 
   const onStop = (e, position) => {
-    window.ga('send', 'event', 'Phrase', 'Moved');
+    window.ga('send', 'event', 'Phrase', 'PhraseMoved');
   }
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export const Word = (props) => {
     if (props.currentContext) {
       setBackgroundColor(props.currentContext.color);
       setDragState({ ...dragState, color: props.currentContext.color });
-      window.ga('send', 'event', 'Phrase', 'AddedToContext');
+      window.ga('send', 'event', 'Phrase', 'PhraseAddedToContext');
     }
   };
   
@@ -39,7 +39,7 @@ export const Word = (props) => {
     const defaultColor = "white";
     setBackgroundColor(defaultColor);
     setDragState({ ...dragState, color: defaultColor.color });
-    window.ga('send', 'event', 'Phrase', 'RemovedFromContext');
+    window.ga('send', 'event', 'Phrase', 'PhraseRemovedFromContext');
   };
 
   return (<Draggable

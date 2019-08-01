@@ -12,7 +12,7 @@ export const BoundedContextList = (props) => {
 
   function createNewBoundedContext(newContext) {
     setContexts([...contexts, newContext]);
-    window.ga('send', 'event', 'Context', 'Created');
+    window.ga('send', 'event', 'Context', 'ContextCreated');
   }
 
   useEffect(() => {

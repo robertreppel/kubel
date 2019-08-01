@@ -29,7 +29,7 @@ export const Toolbar = (props) => {
       fileName = `${fileName}.json`;
     }
     download(JSON.stringify(projectJson), fileName, 'text/json');
-    window.ga('send', 'event', 'Project', 'Exported');
+    window.ga('send', 'event', 'Project', 'ProjectExported');
   };
 
   function download(content, fileName, contentType) {

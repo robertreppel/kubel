@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
 import 'autotrack/lib/plugins/event-tracker';
+import 'autotrack/lib/plugins/outbound-link-tracker';
 
 // Replace UA-XXXXXXXX-X with your own Google Analytics tracking id
 window.ga('create', 'UA-XXXXXXXXX-X', 'auto');
 
 // Only require the plugins you've imported above.
+window.ga('require', 'outboundLinkTracker');
 window.ga('require', 'eventTracker');
 window.ga('send', 'pageview');
 
