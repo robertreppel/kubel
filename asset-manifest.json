@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kubel/static/css/main.f3f226ce.chunk.css",
-    "main.js": "/kubel/static/js/main.f8616898.chunk.js",
-    "main.js.map": "/kubel/static/js/main.f8616898.chunk.js.map",
+    "main.js": "/kubel/static/js/main.588867a5.chunk.js",
+    "main.js.map": "/kubel/static/js/main.588867a5.chunk.js.map",
     "runtime~main.js": "/kubel/static/js/runtime~main.707b6072.js",
     "runtime~main.js.map": "/kubel/static/js/runtime~main.707b6072.js.map",
-    "static/js/2.86af964c.chunk.js": "/kubel/static/js/2.86af964c.chunk.js",
-    "static/js/2.86af964c.chunk.js.map": "/kubel/static/js/2.86af964c.chunk.js.map",
+    "static/js/2.a5b87f90.chunk.js": "/kubel/static/js/2.a5b87f90.chunk.js",
+    "static/js/2.a5b87f90.chunk.js.map": "/kubel/static/js/2.a5b87f90.chunk.js.map",
     "index.html": "/kubel/index.html",
-    "precache-manifest.1233f545fecade41a86bd926ab200379.js": "/kubel/precache-manifest.1233f545fecade41a86bd926ab200379.js",
+    "precache-manifest.bd0bcb66883875aef0aef9719946af7d.js": "/kubel/precache-manifest.bd0bcb66883875aef0aef9719946af7d.js",
     "service-worker.js": "/kubel/service-worker.js",
     "static/css/main.f3f226ce.chunk.css.map": "/kubel/static/css/main.f3f226ce.chunk.css.map"
   }
