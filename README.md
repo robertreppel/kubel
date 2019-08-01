@@ -58,6 +58,9 @@ Spend some time grouping things that seem to belong together and to create new B
 Without knowing any details of the source code, this gives an overview of what it claims to do. Once Kubel implements tracking line numbers in the source, it should be possible to get an idea about cohesiveness (how many lines between related concepts?) and to have links from the Kubel diagram directly to the source.
 
 
+## Google Analytics 
+
+Replace UA-XXXXXXXXX-X in ```src/index.js``` with your own tracking code.
 
 
 
