@@ -44,9 +44,9 @@ export const BoundedContextList = (props) => {
 const OnboardingInstructions = () => {
   return (
     <ol className="onboardingText">
-      <li className="onboardingTextLine">Drag &amp; Drop terms which belong together into groups. </li>
+      <li className="onboardingTextLine">Drag &amp; Drop phrases which belong together into groups. </li>
       <li className="onboardingTextLine">Create &amp; select bounded contexts.</li>
-      <li className="onboardingTextLine">Click terms to mark them as belonging to the currently selected context.</li>
+      <li className="onboardingTextLine">Click phrases to mark them as belonging to the currently selected context.</li>
     </ol>
   )
 }

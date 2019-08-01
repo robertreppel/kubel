@@ -6,8 +6,8 @@ export const ImportWords = (props) => {
     window.ga('set', 'page', '/source-text-input-page');
     window.ga('send', 'pageview');
 
-    const doImport = () => {
-        const text = document.getElementById("importedWords").value;
+    const generateVocabulary = () => {
+        const text = document.getElementById("sourceText").value;
         let importedLines = new Map();
         text.split("\n").map((word) => {
             const myRegexp = /^(\d*):(.*)/;
@@ -30,6 +30,7 @@ export const ImportWords = (props) => {
             props.setWords(words);
             props.setIsImportWordsDialogVisible(false);
             props.setIsContextListVisible(true)
+            window.ga('send', 'event', 'Vocabulary', 'Generated');
         }
     }
 
@@ -54,10 +55,10 @@ export const ImportWords = (props) => {
                     <p>Every line of text will be a phrase which can be grouped with other phrases to determine system boundaries based on Ubiquitous Language.</p>
                 </div>
                 <div>
-                    <textarea id="importedWords" style={{ width: "90vw" }} rows="20"></textarea>
+                    <textarea id="sourceText" style={{ width: "90vw" }} rows="20"></textarea>
                 </div>
                 <div>
-                    <button className="button commandBtn" onClick={doImport}>Generate Vocabulary</button>
+                    <button className="button commandBtn" onClick={generateVocabulary}>Generate Vocabulary</button>
                 </div>
             </div>);
     }
