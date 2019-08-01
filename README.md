@@ -58,13 +58,6 @@ Spend some time grouping things that seem to belong together and to create new B
 Without knowing any details of the source code, this gives an overview of what it claims to do. Once Kubel implements tracking line numbers in the source, it should be possible to get an idea about cohesiveness (how many lines between related concepts?) and to have links from the Kubel diagram directly to the source.
 
 
-## Build Configuration 
-
-### Google Analytics 
-
-Before yarn build, set an environment variable with your own Google Analytics tracking code: export REACT_APP_KUBEL_GOOGLE_ANALYTICS_TRACKINGCODE=UA-XXXXXXXXX-X
-
-
 
 
 

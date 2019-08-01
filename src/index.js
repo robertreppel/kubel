@@ -6,8 +6,8 @@ import * as serviceWorker from './serviceWorker';
 
 import 'autotrack/lib/plugins/event-tracker';
 
-// Before yarn build, set an environment variable with your own Google Analytics tracking code: export REACT_APP_KUBEL_GOOGLE_ANALYTICS_TRACKINGCODE=UA-XXXXXXXXX-X
-window.ga('create', process.env.REACT_APP_KUBEL_GOOGLE_ANALYTICS_TRACKINGCODE, 'auto');
+// Replace UA-XXXXXXXX-X with your own Google Analytics tracking id
+window.ga('create', 'UA-XXXXXXXXX-X', 'auto');
 
 // Only require the plugins you've imported above.
 window.ga('require', 'eventTracker');
